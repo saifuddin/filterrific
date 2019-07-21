@@ -22,6 +22,7 @@ Filterrific.submitFilterForm = function(){
   var form = $(this).parents("form"),
       url = form.attr("action");
   // turn on spinner
+  $("#fadeMe").css("display", "");
   $('.filterrific_spinner').show();
   // Submit ajax request
   $.ajax({
@@ -30,6 +31,7 @@ Filterrific.submitFilterForm = function(){
     type: 'GET',
     dataType: 'script'
   }).done(function( msg ) {
+    $("#fadeMe").css("display", "none");
     $('.filterrific_spinner').hide();
   });
 };
